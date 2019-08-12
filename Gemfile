@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop', '~> 0.49.1' # Locked because minor versions might change cops
+  gem 'byebug'
 end
 
 group :development do
