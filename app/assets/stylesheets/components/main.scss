@@ -13,7 +13,7 @@ main {
   h1 {
     @include heading-48;
 
-    color: $hackney-green;
+    color: $kingston-blue;
     font-weight: bold;
     letter-spacing: -1px;
   }
@@ -87,7 +87,7 @@ main {
     font-size: 80%;
 
     small {
-      background-color: $hackney-green;
+      background-color: $kingston-blue;
       color: $white;
       padding: 2px 4px;
       margin-right: 4px;

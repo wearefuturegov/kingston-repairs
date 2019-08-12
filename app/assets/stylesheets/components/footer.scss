@@ -1,13 +1,11 @@
 footer {
   background-color: $hackney-dark-grey;
-  border-top: 5px solid $hackney-light-green;
   color: $white;
   font-size: 14px;
   padding: 2em;
   position: relative;
 
   &::before {
-    background-color: #9bcf7f;
     content: '';
     display: block;
     height: 3px;
@@ -18,7 +16,6 @@ footer {
   }
 
   &::after {
-    background-color: $hackney-mid-green;
     content: '';
     height: 6px;
     left: 0;

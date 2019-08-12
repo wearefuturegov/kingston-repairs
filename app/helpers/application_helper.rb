@@ -33,4 +33,10 @@ module ApplicationHelper
   def water_emergency_telephone_number
     telephone_number('0800 714 614')
   end
+
+  def show_svg(path)
+    File.open("app/assets/images/#{path}", "rb") do |file|
+      raw file.read
+    end
+  end
 end

@@ -24,15 +24,15 @@ input.string {
 }
 
 .button {
-  background-color: $hackney-green;
+  background-color: $kingston-blue;
   margin-bottom: $gutter-half;
 
   &:visited {
-    background-color: $hackney-green;
+    background-color: $kingston-blue;
   }
 
   &:hover, &:focus {
-    background-color: $hackney-light-green;
+    background-color: $kingston-mid-blue;
   }
 }
 

@@ -1,12 +1,10 @@
 header {
-  background-color: $hackney-dark-grey;
-  border-bottom: 4px solid $hackney-mid-green;
+  background-color: $kingston-dark-blue;
+  //border-bottom: 4px solid $kingston-mid-blue;
   color: $white;
-  padding: $gutter 0 ($gutter + 5px);
   position: relative;
 
   &:before {
-    background: $hackney-mid-green;
     bottom: 5px;
     content: "";
     display: block;
@@ -17,7 +15,6 @@ header {
   }
 
   &:after {
-    background: #9bcf7f;
     bottom: -11px;
     content: '';
     display: block;
@@ -28,7 +25,6 @@ header {
   }
 
   @include media(mobile) {
-    padding: $gutter-half 0;
 
     &:before { display: none }
     &:after { display: none }
@@ -39,25 +35,26 @@ header {
   }
 
   h1 {
-    background: asset-url('logo.png') 0 0 no-repeat;
     background-size: contain;
     -ms-behavior: url(/backgroundsize.htc);
     display: inline-block;
     height: 62px;
-    overflow: hidden;
-    text-indent: 100%;
-    vertical-align: middle;
+    text-indent: 10%;
+    vertical-align: bottom;
     white-space: nowrap;
     width: 300px;
+    color: white;
+    font-weight: 700;
+    font-size: 3em;
 
     @include media(mobile) {
       height: 35px;
       width: 170px;
+      font-size: 1.7em;
     }
   }
 
   a, a:link, a:visited, a:hover {
-    background-color: $hackney-dark-grey;
     color: $white;
     text-decoration: none;
   }
@@ -67,5 +64,16 @@ header {
     display: inline-block;
     margin-left: $gutter-half;
     vertical-align: bottom;
+  }
+  .site-header__logo {
+    color: #162655;
+    width: 25%;
+    display: inline-block;
+    vertical-align: middle;
+    height: 239px;
+
+    @include media(mobile) {
+      height: 104px;
+    }
   }
 }
