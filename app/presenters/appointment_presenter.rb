@@ -70,6 +70,7 @@ class AppointmentPresenter
   end
 
   def encryption_secret
-    ENV.fetch('ENCRYPTION_SECRET')
+    #ENV.fetch('ENCRYPTION_SECRET')
+    'abc'
   end
 end

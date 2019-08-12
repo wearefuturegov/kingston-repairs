@@ -1,15 +1,14 @@
 class AppointmentsController < ApplicationController
   def show
     @form = AppointmentForm.new
-    render :show
-    # @appointments = available_appointments
+    @appointments = available_appointments
     # @work_order_reference = work_order_reference
 
-    # if @appointments.any?
-    #   render :show
-    # else
-    #   render :none_available
-    # end
+    if @appointments.any?
+      render :show
+    else
+      render :none_available
+    end
   end
 
   def submit
@@ -37,13 +36,16 @@ class AppointmentsController < ApplicationController
   end
 
   def available_appointments
-    AppointmentFetcher
-      .new
-      .call(
-        work_order_reference: work_order_reference,
-        limit: ENV.fetch('APPOINTMENT_LIMIT', 15).to_i
-      )
-      .map { |appointment| AppointmentPresenter.new(appointment) }
+    # AppointmentFetcher
+    #   .new
+    #   .call(
+    #     work_order_reference: work_order_reference,
+    #     limit: ENV.fetch('APPOINTMENT_LIMIT', 15).to_i
+    #   )
+    [
+      { 'appointment_id' => 'abc', 'beginDate' => '2017-10-11T10:00:00Z', 'endDate' => '2017-10-11T12:00:00Z', 'bestSlot' => true },
+      { 'appointment_id' => 'abcd', 'beginDate' => '2017-10-11T12:00:00Z', 'endDate' => '2017-10-11T17:00:00Z', 'bestSlot' => true },
+    ].map { |appointment| AppointmentPresenter.new(appointment) }
   end
 
   def book_appointment_save_into_answer_store
