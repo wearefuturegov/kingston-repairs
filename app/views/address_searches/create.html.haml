@@ -10,30 +10,59 @@
     = @address_search.form.postcode.upcase
   = link_to t('address_search.change'), address_search_path
 
-- if @address_search.results
-  #address-search-results
-    = simple_form_for @form, url: address_path do |f|
-      = f.hidden_field :postcode, value: @address_search.form.postcode
+/ - if @address_search.results
+/   #address-search-results
+/     = simple_form_for @form, url: address_path do |f|
+/       = f.hidden_field :postcode, value: @address_search.form.postcode
 
-      - if @address_search.results.any?
-        %fieldset
-          = f.input :property_reference,
-            as: :radio_buttons,
-            collection: @address_search.results,
-            label_method: :address,
-            value_method: :property_reference,
-            required: true
+/       - if @address_search.results.any?
+/         %fieldset
+/           = f.input :property_reference,
+/             as: :radio_buttons,
+/             collection: @address_search.results,
+/             label_method: :address,
+/             value_method: :property_reference,
+/             required: true
 
-          = f.input :property_reference,
-            as: :radio_buttons,
-            collection: [:address_isnt_here],
-            label: false,
-            include_hidden: false,
-            error: false
+/           = f.input :property_reference,
+/             as: :radio_buttons,
+/             collection: [:address_isnt_here],
+/             label: false,
+/             include_hidden: false,
+/             error: false
 
-      - else
-        = f.hidden_field :property_reference, value: :address_isnt_here
+/       - else
+/         = f.hidden_field :property_reference, value: :address_isnt_here
 
-        %p= t('address_search.not_found')
+/         %p= t('address_search.not_found')
 
-      = f.button :submit, class: 'button'
+/       = f.button :submit, class: 'button'
+
+
+
+#address-search-results
+  = simple_form_for @form, url: address_path do |f|
+    =# f.hidden_field :postcode, value: @address_search.form.postcode
+
+    -# if @address_search.results.any?
+      %fieldset
+        / = f.input :property_reference,
+        /   as: :radio_buttons,
+        /   collection: @address_search.results,
+        /   label_method: :address,
+        /   value_method: :property_reference,
+        /   required: true
+
+        = f.input :property_reference,
+          as: :radio_buttons,
+          collection: [:address_isnt_here],
+          label: false,
+          include_hidden: false,
+          error: false
+
+    -# else
+      =# f.hidden_field :property_reference, value: :address_isnt_here
+
+      %p= t('address_search.not_found')
+
+    = f.button :submit, class: 'button'

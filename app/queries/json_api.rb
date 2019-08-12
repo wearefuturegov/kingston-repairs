@@ -82,7 +82,7 @@ class JsonApi
       api_cert: ENV['PROXY_API_CERT'],
       api_key: ENV['PROXY_API_KEY']
     )
-      raise InvalidApiRootError, 'API root was nil or empty' if api_root.blank?
+      #raise InvalidApiRootError, 'API root was nil or empty' if api_root.blank?
 
       build_connection(
         root: api_root,

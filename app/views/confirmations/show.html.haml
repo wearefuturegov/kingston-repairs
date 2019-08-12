@@ -2,21 +2,21 @@
   %section#confirmation.column-two-thirds
     %h1
       Thank you
-      = @confirmation.full_name
+      =# @confirmation.full_name
 
     %p
       Your repair request has been successfully submitted.
 
     .box-highlight.lede
       Your reference number is
-      = succeed "." do
-        %strong= @confirmation.request_reference
+      / = succeed "." do
+      /   %strong= @confirmation.request_reference
 
-    = render @confirmation.scheduled_action
+    =# render @confirmation.scheduled_action
 
 .grid-row
   %section#summary.column-two-thirds
     %h3 Your details
-    %p= t('confirmation.summary.name', name: @confirmation.full_name)
-    %p= t('confirmation.summary.phone', phone: @confirmation.telephone_number)
-    %p= t('confirmation.summary.address', address: @confirmation.address)
+    %p=# t('confirmation.summary.name', name: @confirmation.full_name)
+    %p=# t('confirmation.summary.phone', phone: @confirmation.telephone_number)
+    %p=# t('confirmation.summary.address', address: @confirmation.address)
