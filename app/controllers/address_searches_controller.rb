@@ -13,11 +13,11 @@ class AddressSearchesController < ApplicationController
   def create
     @address_search = AddressSearch.new(address_search_params[:address_search])
 
-    if @address_search.form.valid?
-      @form = AddressForm.new
-    else
-      render :index
-    end
+    #if @address_search.form.valid?
+    @form = AddressForm.new
+    #else
+      #render :index
+    #end
   end
 
   def destroy

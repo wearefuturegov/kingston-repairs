@@ -1,26 +1,27 @@
 class AppointmentsController < ApplicationController
   def show
     @form = AppointmentForm.new
-    @appointments = available_appointments
-    @work_order_reference = work_order_reference
+    render :show
+    # @appointments = available_appointments
+    # @work_order_reference = work_order_reference
 
-    if @appointments.any?
-      render :show
-    else
-      render :none_available
-    end
+    # if @appointments.any?
+    #   render :show
+    # else
+    #   render :none_available
+    # end
   end
 
   def submit
-    @form = AppointmentForm.new(appointment_form_params)
+    # @form = AppointmentForm.new(appointment_form_params)
 
-    if @form.invalid?
-      @appointments = available_appointments
-      @work_order_reference = work_order_reference
-      return render :show
-    end
+    # if @form.invalid?
+    #   @appointments = available_appointments
+    #   @work_order_reference = work_order_reference
+    #   return render :show
+    # end
 
-    book_appointment_save_into_answer_store
+    # book_appointment_save_into_answer_store
 
     redirect_to confirmation_path(params[:repair_request_reference])
   end

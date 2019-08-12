@@ -1,20 +1,21 @@
 class AddressesController < ApplicationController
   def create
-    @form = AddressForm.new(address_form_params)
+    redirect_to address_success_path
+    # @form = AddressForm.new(address_form_params)
 
-    saver = AddressSaver.new(selected_answer_store: selected_answer_store)
+    # saver = AddressSaver.new(selected_answer_store: selected_answer_store)
 
-    case saver.save(@form)
-    when :success
-      redirect_to address_success_path
-    when :not_found
-      redirect_to page_path('address_isnt_here')
-    when :invalid
-      @address_search = AddressSearch.new(postcode: @form.postcode)
-      render 'address_searches/create'
-    when :not_maintainable
-      redirect_to page_path('cannot_report_repair')
-    end
+    # case saver.save(@form)
+    # when :success
+    #   redirect_to address_success_path
+    # when :not_found
+    #   redirect_to page_path('address_isnt_here')
+    # when :invalid
+    #   @address_search = AddressSearch.new(postcode: @form.postcode)
+    #   render 'address_searches/create'
+    # when :not_maintainable
+    #   redirect_to page_path('cannot_report_repair')
+    # end
   end
 
   private
